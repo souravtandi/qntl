@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Banner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="m-0 p-0">
+
+    <!-- Hero Section -->
+    <section class="relative h-screen w-full overflow-hidden">
+
+        <!-- Background Image -->
+        <img src="./image/banner1.png" alt="Background" class="absolute inset-0 w-full h-full object-cover" />
+
+        <!-- Overlay gradient for better text contrast -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
+
+        <!-- Navbar -->
+        <nav class="absolute top-0 left-0 w-full flex items-center justify-between px-12 py-6 z-10">
+            <!-- Logo -->
+            <div class="text-white text-2xl font-bold">
+                <img src="./image/Logo.png" width="114.17px" height="29px" />
+            </div>
+
+            <!-- Nav links -->
+            <ul class="hidden md:flex space-x-8 text-white font-light text-lg">
+                <li><a href="#" class="hover:text-yellow-400">Services</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Industries</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Case Studies</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Insights</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+                <li><a href="#" class="hover:text-yellow-400">About</a></li>
+            </ul>
+
+            <!-- Right-side actions -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="text-yellow-400 text-lg font-semibold hover:underline">
+                    Get In Touch
+                </a>
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-[18px] w-[18px] text-white" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1110.5 3a7.5 7.5 0 016.15 13.65z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="absolute inset-0 flex items-center px-16">
+            <div class="max-w-xl text-white">
+                <h1 class="text-3xl md:text-5xl font-light leading-tight mb-8">
+                    Automate, Learn, Adapt<br />
+                    Architecting the Cognitive<br />
+                    Enterprise
+                </h1>
+                <a href="#"
+                    class="inline-block border border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-black transition">
+                    Let’s Power Up
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="h-[5px] bg-[#4B7FC1]"></div>
+    <section class="w-full py-16" style="background: linear-gradient(to bottom, #111339 0%, #000119 88%);">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <!-- Section Heading -->
+            <h2 class="text-3xl md:text-6xl font-light text-white mb-16 text-start ps-10">
+                Impact That Resonates
+            </h2>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-16">
+                <!-- Stat 1 -->
+                <div>
+                    <p class="text-white text-xl mb-2">Years in business</p>
+                    <p class="text-7xl font-bold text-[#1D5BFF]">10</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div>
+                    <p class="text-white text-xl mb-2">Digital Transformations</p>
+                    <p class="text-7xl font-bold text-[#F8C247]">200+</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div>
+                    <p class="text-white text-xl mb-2">Clients across 5 continents</p>
+                    <p class="text-7xl font-bold text-[#F8A833]">110+</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div>
+                    <p class="text-white text-xl mb-2">Number of employees</p>
+                    <p class="text-7xl font-bold text-[#57D0D8]">2500+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="w-full py-16" style="background: linear-gradient(to bottom, #111339 0%, #000119 88%);">
+        <div class="max-w-7xl mx-auto px-4 text-white">
+
+            <!-- Small Yellow Heading -->
+            <p class="text-yellow-400 text-sm font-semibold mb-4">
+                Future Ready Solutions
+            </p>
+
+            <!-- Large Headline -->
+            <h2 class="text-3xl md:text-5xl font-light mb-12 max-w-4xl">
+                At Qentelli, we blend technology, strategy, and innovation
+                to accelerate your digital transformation journey.
+            </h2>
+
+            <!-- Cards Grid -->
+            <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
+            <div class="">
+                <!-- Card 1 -->
+                <div class="relative rounded-xl overflow-hidden group w-[375.15px] h-[589.07px]">
+                    <img src="./image/ce.png" alt="Cloud Engineering"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-2 flex items-center">
+                            Cloud Engineering
+                            <span class="ml-2">→</span>
+                        </h3>
+                        <p class="text-sm text-white max-w-xs">
+                            Streamline operations and gain an edge with integrated, future-ready solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative rounded-xl overflow-hidden group">
+                    <img src="./image/dt.png" alt="Digital Transformation"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-2 flex items-center">
+                            Digital Transformation
+                            <span class="ml-2">→</span>
+                        </h3>
+                        <p class="text-sm text-white max-w-xs">
+                            Streamline operations and gain an edge with integrated, future-ready solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative rounded-xl overflow-hidden group">
+                    <img src="./image/ai.png" alt="AI & Data"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-2 flex items-center">
+                            AI & Data
+                            <span class="ml-2">→</span>
+                        </h3>
+                        <p class="text-sm text-white max-w-xs">
+                            Streamline operations and gain an edge with integrated, future-ready solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="relative rounded-xl overflow-hidden group">
+                    <img src="./image/qe.png" alt="Quality Engineering"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" />
+                    <div class="absolute inset-0 bg-black/50"></div>
+                    <div class="absolute bottom-0 p-6">
+                        <h3 class="text-yellow-400 text-lg font-semibold mb-2 flex items-center">
+                            Quality Engineering
+                            <span class="ml-2">→</span>
+                        </h3>
+                        <p class="text-sm text-white max-w-xs">
+                            Streamline operations and gain an edge with integrated, future-ready solutions.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
