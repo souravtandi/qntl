@@ -193,7 +193,7 @@
             </div>
         </section>
         <section class="py-12 text-white">
-            <div class="ms-[10vw] justify-end flex flex-col lg:flex-row">
+            <div class="ms-[100px] justify-end flex flex-col lg:flex-row">
 
                 <!-- LEFT SIDE TEXT -->
                 <div class="">
@@ -204,36 +204,51 @@
                         We bring tailored digital engineering solutions to a range of industries
                     </h2>
                     <button
-                        class="mt-4 px-6 py-3 bg-transparent border border-white rounded-full hover:bg-white hover:text-black transition">
-                        Learn More
+                        class="mt-4 px-6 py-3 bg-transparent border border-white rounded-full hover:bg-[#FFCE31] hover:text-black transition">
+                        Explore industries
                     </button>
                 </div>
 
                 <!-- RIGHT SIDE SLIDER -->
-                <div class="flex-1 overflow-x-auto">
-                    <div class="flex gap-6 w-max">
+                <div class="flex-1 overflow-x-auto pe-3 [scrollbar-color:#4B7FC1_#24294C]
+                    [scrollbar-width:thin]
+                    [&::-webkit-scrollbar]:h-1
+                    [&::-webkit-scrollbar]:bg-[#4B7FC1]
+                    [&::-webkit-scrollbar-thumb]:bg-[#4B7FC1]
+                    [&::-webkit-scrollbar-thumb]:rounded-full">
+                    <div class="flex gap-6 w-max pb-16">
 
                         <!-- CARD 1 -->
-                        <div class="w-[431px] h-[462px] bg-[#24294C] rounded-md p-4 border border-[#4B7FC1]">
-                            <img src="./image/bfsi.png" alt="BFSI"
-                                class="w-full h-44 object-cover rounded" />
-                            <h3 class="mt-4 text-lg font-semibold">
+                        <div
+                            class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <img src="./image/bfsi.png" alt="BFSI" class="w-[365px] h-[344px] rounded" />
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold ms-8">
                                 BFSI →
                             </h3>
                         </div>
 
                         <!-- CARD 2 -->
-                        <div class="w-72 min-w-72 bg-[#1b224a] rounded-lg p-4">
-                            <img src="./image/health.png" alt="Healthcare & Pharma"
-                                class="w-full h-44 object-cover rounded" />
-                            <h3 class="mt-4 text-lg font-semibold">
+                        <div
+                            class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <img src="./image/health.png" alt="Healthcare & Pharma"
+                                    class="w-[365px] h-[344px] rounded" />
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold ms-8">
                                 Healthcare & Pharma →
                             </h3>
                         </div>
-                        <div class="w-72 min-w-72 bg-[#1b224a] rounded-lg p-4">
-                            <img src="https://via.placeholder.com/300x200" alt="Healthcare & Pharma"
-                                class="w-full h-44 object-cover rounded" />
-                            <h3 class="mt-4 text-lg font-semibold">
+
+                        <!-- CARD 3 -->
+                        <div
+                            class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <img src="./image/health.png" alt="Healthcare & Pharma"
+                                    class="w-[365px] h-[344px] rounded" />
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold ms-8">
                                 Healthcare & Pharma →
                             </h3>
                         </div>
@@ -244,7 +259,90 @@
 
             </div>
         </section>
+        <div class="flex py-16">
 
+            <!-- LEFT SIDE -->
+            <div class="relative">
+                <!-- background image -->
+                <img src="./image/pathfinder.png" alt="People meeting" class="w-[586px] h-[581px]" />
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="flex-1 p-12 flex flex-col justify-center">
+
+                <!-- logos row -->
+                <div class="flex flex-wrap gap-7 items-center mb-16">
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/accelq.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/tricentis.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/cognistx.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/progress.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/cloud.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/docusign.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/aws.png" /></span>
+                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/sap.png" /></span>
+                </div>
+
+                <!-- small heading -->
+                <p class="text-[#FFCE31] font-semibold mb-5 text-xl">
+                    Trusted Technology Ecosystems
+                </p>
+
+                <!-- large heading -->
+                <h1 class="text-4xl md:text-5xl font-light text-[#D2EDFB] mb-12">
+                    Global platforms and ecosystems <br /> to drive digital excellence.
+                </h1>
+
+                <!-- pill input/button -->
+                <button
+                    class="w-80 h-12 rounded-full border-2 border-[#4B7FC1] text-[#fff] text-base hover:bg-[#FFCE31] hover:text-[#1c1c1c] transition">
+                    Learn More About Our Partnership
+                </button>
+
+            </div>
+        </div>
+        <div class="mt-[-80px] ps-16 bg-[url('./image/vector.png')] bg-no-repeat bg-contain bg-top aspect-[16/9] pb-0">
+            <h3 class="font-light text-5xl text-[#D2EDFB] pt-[250px] pb-16">Case Studies</h3>
+            <div class="flex overflow-x-auto pb-16 gap-5">
+                <div class="shrink-0">
+                    <div>
+                        <img src="./image/casestd/img1.png" />
+                    </div>
+                    <div>
+                        <h4 class="text-[#4B7FC1] text-lg font-regular my-4 mb-0">Test Automation</h4>
+                        <p class="text-[#B0B0B0] text-3xl w-[520px]">Rewriting the Rules of test Automation: A Transformation Tale from the Skies</p>
+                    </div>
+                </div>
+                <div class="shrink-0">
+                    <div>
+                        <img src="./image/casestd/img1.png" />
+                    </div>
+                    <div>
+                        <h4 class="text-[#4B7FC1] text-lg font-regular my-4 mb-0">Test Automation</h4>
+                        <p class="text-[#B0B0B0] text-3xl w-[520px]">Rewriting the Rules of test Automation: A Transformation Tale from the Skies</p>
+                    </div>
+                </div>
+                <div class="shrink-0">
+                    <div>
+                        <img src="./image/casestd/img1.png" />
+                    </div>
+                    <div>
+                        <h4 class="text-[#4B7FC1] text-lg font-regular my-4 mb-0">Test Automation</h4>
+                        <p class="text-[#B0B0B0] text-3xl w-[520px]">Rewriting the Rules of test Automation: A Transformation Tale from the Skies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-light text-5xl text-[#D2EDFB] pt-16 text-center">Trusted by global Leaders around the world</h3>
+            <div class="flex justify-center gap-5 py-16">
+                <img src="./image/gl/Google.png" />
+                <img src="./image/gl/Facebook.png" />
+                <img src="./image/gl/Pinterest.png" />
+                <img src="./image/gl/Twitch.png" />
+                <img src="./image/gl/Webflow.png" />
+                <img src="./image/gl/YouTube.png" />
+            </div>
+        </div>
     </section>
 </body>
 
