@@ -9,6 +9,97 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        .marquee {
+            display: flex;
+            width: max-content;
+            animation: scrollLeft 20s linear infinite;
+        }
+
+        @keyframes scrollLeft {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+    <style>
+        .flip-card {
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+    <style>
+        circle {
+            transition: cx 0.5s ease, cy 0.5s ease;
+        }
+    </style>
+    <style type="text/tailwindcss">
+        @layer utilities {
+      .marquee-left {
+        animation: marquee-left 20s linear infinite;
+      }
+      .marquee-right {
+        animation: marquee-right 20s linear infinite;
+      }
+
+      @keyframes marquee-left {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      @keyframes marquee-right {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    }
+  </style>
 </head>
 
 <body class="m-0 p-0">
@@ -16,7 +107,7 @@
     <section class="relative h-screen w-full overflow-hidden">
 
         <!-- Background Image -->
-        <img src="./image/banner1.png" alt="Background" class="absolute inset-0 w-full h-full object-cover" />
+        <!-- <img src="./image/banner1.png" alt="Background" class="absolute inset-0 w-full h-full object-cover" /> -->
 
         <!-- Overlay gradient for better text contrast -->
         <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/30 to-transparent"></div>
@@ -54,7 +145,7 @@
         </nav>
 
         <!-- Hero Content -->
-        <div class="absolute inset-0 flex items-center px-16">
+        <!-- <div class="absolute inset-0 flex items-center px-16">
             <div class="max-w-xl text-white">
                 <h1 class="text-3xl md:text-5xl font-light leading-tight mb-8">
                     Automate, Learn, Adapt<br />
@@ -66,10 +157,100 @@
                     Let’s Power Up
                 </a>
             </div>
+        </div> -->
+
+        <!-- Carousel Wrapper -->
+        <div class="relative w-full h-screen overflow-hidden">
+
+            <!-- Slides Container -->
+            <div id="slides" class="flex transition-transform duration-700 ease-in-out w-full h-full">
+
+                <!-- Slide 1 -->
+                <div class="w-full shrink-0 h-full flex items-center justify-center bg-cover bg-center relative"
+                    style="background-image: url('./image/heroImg/b1.png');">
+                    <div class="absolute inset-0 flex items-center px-16 bg-black/50">
+                        <div class="max-w-xl text-white">
+                            <h1 class="text-3xl md:text-5xl font-light leading-tight mb-8">
+                                Automate, Learn, Adapt<br />
+                                Architecting the Cognitive<br />
+                                Enterprise
+                            </h1>
+                            <a href="#"
+                                class="inline-block text-base font-medium border border-[#4B7FC1] text-white px-6 py-3 rounded-full hover:bg-[#FFCE31] hover:text-black transition">
+                                Let’s Power Up
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Slide 2 -->
+                <div class="w-full shrink-0 h-full flex items-center justify-center bg-cover bg-center relative"
+                    style="background-image: url('./image/heroImg/b2.png');">
+                    <div class="absolute inset-0 flex items-center px-16 bg-black/50">
+                        <div class="max-w-xl text-white">
+                            <h1 class="text-3xl md:text-5xl font-light leading-tight mb-8">
+                                Modernize workloads.<br />
+                                Automate releases. Scale<br />
+                                without friction
+                            </h1>
+                            <a href="#"
+                                class="inline-block text-base font-medium border border-[#4B7FC1] text-white px-6 py-3 rounded-full hover:bg-[#FFCE31] hover:text-black transition">
+                                Let’s Modernize
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="w-full shrink-0 h-full flex items-center justify-center bg-cover bg-center relative"
+                    style="background-image: url('./image/heroImg/b3.png');">
+                    <div class="absolute inset-0 flex items-center px-16 bg-black/50">
+                        <div class="max-w-xl text-white">
+                            <h1 class="text-3xl md:text-5xl font-light leading-tight mb-8">
+                                Transforming Businesses<br />
+                                with intelligent Digital<br />
+                                Engineering
+                            </h1>
+                            <a href="#"
+                                class="inline-block text-base font-medium border border-[#4B7FC1] text-white px-6 py-3 rounded-full hover:bg-[#FFCE31] hover:text-black transition">
+                                Explore What's Possible
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="w-full shrink-0 h-full flex items-center justify-center bg-cover bg-center relative"
+                    style="background-image: url('./image/heroImg/b4.png');">
+                    <div class="absolute inset-0 flex items-center px-16 bg-black/50">
+                        <div class="max-w-xl text-white">
+                            <h1 class="text-3xl md:text-5xl font-light leading-tight mb-8">
+                                Unify Business<br />
+                                Functions on Robust<br />
+                                Digital Foundations
+                            </h1>
+                            <a href="#"
+                                class="inline-block text-base font-medium border border-[#4B7FC1] text-white px-6 py-3 rounded-full hover:bg-[#FFCE31] hover:text-black transition">
+                                Reimagine Your Enterprise
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Custom Scrollbar (Indicator) -->
+            <div class="absolute bottom-0 left-0 w-full h-[5px] bg-[#4B7FC1] overflow-hidden">
+                <div id="indicator" class="h-full w-1/4 bg-[#F6A91B] transition-transform duration-700 ease-in-out">
+                </div>
+            </div>
+
         </div>
+
     </section>
     <section class="" style="background: linear-gradient(to bottom, #111339 0%, #000119 88%);">
-        <div class="h-[5px] bg-[#4B7FC1]"></div>
+        <!-- <div class="h-[5px] bg-[#4B7FC1]"></div> -->
         <section class="mx-auto max-w-7xl py-16">
             <div class="">
                 <!-- Section Heading -->
@@ -78,31 +259,29 @@
                 </h2>
 
                 <!-- Stats Grid -->
-                <div class="flex justify-between">
+                <div id="stats" class="flex justify-between">
                     <!-- Stat 1 -->
                     <div>
                         <p class="text-white text-xl mb-2">Years in business</p>
-                        <p class="text-7xl font-bold text-[#1D5BFF]">10</p>
+                        <p id="num1" class="text-7xl font-bold text-[#1D5BFF]">0</p>
                     </div>
-
                     <!-- Stat 2 -->
                     <div>
                         <p class="text-white text-xl mb-2">Digital Transformations</p>
-                        <p class="text-7xl font-bold text-[#F8C247]">200+</p>
+                        <p id="num2" class="text-7xl font-bold text-[#F8C247]">0</p>
                     </div>
-
                     <!-- Stat 3 -->
                     <div>
                         <p class="text-white text-xl mb-2">Clients across 5 continents</p>
-                        <p class="text-7xl font-bold text-[#F8A833]">110+</p>
+                        <p id="num3" class="text-7xl font-bold text-[#F8A833]">0</p>
                     </div>
-
                     <!-- Stat 4 -->
                     <div>
                         <p class="text-white text-xl mb-2">Number of employees</p>
-                        <p class="text-7xl font-bold text-[#57D0D8]">2500+</p>
+                        <p id="num4" class="text-7xl font-bold text-[#57D0D8]">0</p>
                     </div>
                 </div>
+
             </div>
         </section>
         <section class="mx-auto max-w-7xl py-16">
@@ -203,14 +382,14 @@
                     <h2 class="text-3xl md:text-5xl font-light leading-tight mb-6 md:w-[420px] text-[#D2EDFB]">
                         We bring tailored digital engineering solutions to a range of industries
                     </h2>
-                    <button
+                    <button id="horizontal-section"
                         class="mt-4 px-6 py-3 bg-transparent border border-white rounded-full hover:bg-[#FFCE31] hover:text-black transition">
                         Explore industries
                     </button>
                 </div>
 
                 <!-- RIGHT SIDE SLIDER -->
-                <div class="flex-1 overflow-x-auto pe-3 [scrollbar-color:#4B7FC1_#24294C]
+                <div id="horizontal-scroll" class="flex-1 overflow-x-auto pe-3 [scrollbar-color:#4B7FC1_#24294C]
                     [scrollbar-width:thin]
                     [&::-webkit-scrollbar]:h-1
                     [&::-webkit-scrollbar]:bg-[#4B7FC1]
@@ -245,19 +424,52 @@
                         <div
                             class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
                             <div class="mx-auto">
-                                <img src="./image/health.png" alt="Healthcare & Pharma"
+                                <img src="./image/qsr.png" alt="Healthcare & Pharma"
                                     class="w-[365px] h-[344px] rounded" />
                             </div>
                             <h3 class="mt-4 text-2xl font-semibold ms-8">
-                                Healthcare & Pharma →
+                                QSR →
                             </h3>
                         </div>
 
-                        <!-- Add more cards if needed -->
-                    </div>
-                </div>
+                        <!-- CARD 4 -->
+                        <div
+                            class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <img src="./image/it.png" alt="Healthcare & Pharma"
+                                    class="w-[365px] h-[344px] rounded" />
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold ms-8">
+                                IT & Software →
+                            </h3>
+                        </div>
 
-            </div>
+                        <!-- CARD 5 -->
+                        <div
+                            class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <img src="./image/telecom.png" alt="Healthcare & Pharma"
+                                    class="w-[365px] h-[344px] rounded" />
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold ms-8">
+                                Telecom & Media →
+                            </h3>
+                        </div>
+
+                        <!-- CARD 6 -->
+                        <div
+                            class="w-[431px] h-[462px] bg-[#24294C] rounded-md border border-[#4B7FC1] flex flex-col justify-center">
+                            <div class="mx-auto">
+                                <img src="./image/avation.png" alt="Healthcare & Pharma"
+                                    class="w-[365px] h-[344px] rounded" />
+                            </div>
+                            <h3 class="mt-4 text-2xl font-semibold ms-8">
+                                Aviation →
+                            </h3>
+                        </div>
+                    </div>
+
+                </div>
         </section>
         <div class="flex py-16">
 
@@ -270,20 +482,48 @@
             <!-- RIGHT SIDE -->
             <div class="flex-1 p-12 flex flex-col justify-center">
 
-                <!-- logos row -->
-                <div class="flex flex-wrap gap-7 items-center mb-16">
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/accelq.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/tricentis.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/cognistx.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/progress.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/cloud.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/docusign.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/aws.png" /></span>
-                    <span class="text-gray-300 font-semibold"><Img src="./image/logo/sap.png" /></span>
+                <div class="overflow-hidden w-full pb-5">
+                    <!-- TOP MARQUEE -->
+                    <div class="flex whitespace-nowrap marquee-left">
+                        <div class="flex items-center gap-5">
+                            <div class="shrink-0"><img src="./image/logo/accelq.png" width="auto" height="auto" /></div>
+                            <div class="shrink-0"><img src="./image/logo/tricentis.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/cognistx.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/progress.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/cloud.png" width="auto" height="auto" /></div>
+                            <div class="shrink-0"><img src="./image/logo/docusign.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/aws.png" width="auto" height="auto" /></div>
+                            <div class="shrink-0"><img src="./image/logo/sap.png" width="auto" height="auto" /></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden w-full">
+                    <!-- BOTTOM MARQUEE -->
+                    <div class="flex whitespace-nowrap marquee-right">
+                        <div class="flex items-center gap-5">
+                            <div class="shrink-0"><img src="./image/logo/accelq.png" width="auto" height="auto" /></div>
+                            <div class="shrink-0"><img src="./image/logo/tricentis.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/cognistx.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/progress.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/cloud.png" width="auto" height="auto" /></div>
+                            <div class="shrink-0"><img src="./image/logo/docusign.png" width="auto" height="auto" />
+                            </div>
+                            <div class="shrink-0"><img src="./image/logo/aws.png" width="auto" height="auto" /></div>
+                            <div class="shrink-0"><img src="./image/logo/sap.png" width="auto" height="auto" /></div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- small heading -->
-                <p class="text-[#FFCE31] font-semibold mb-5 text-xl">
+                <p class="text-[#FFCE31] font-semibold mb-5 text-xl pt-16">
                     Trusted Technology Ecosystems
                 </p>
 
@@ -338,58 +578,130 @@
         <div>
             <h3 class="font-light text-5xl text-[#D2EDFB] pt-16 text-center">Trusted by global Leaders around the world
             </h3>
-            <div class="flex justify-between py-16 px-5 overflow-x-auto gap-5">
-                <div class="shrink-0"><img src="./image/gl/Google.png" /></div>
-                <div class="shrink-0"><img src="./image/gl/Facebook.png" /></div>
-                <div class="shrink-0"><img src="./image/gl/Pinterest.png" /></div>
-                <div class="shrink-0"><img src="./image/gl/Twitch.png" /></div>
-                <div class="shrink-0"><img src="./image/gl/Webflow.png" /></div>
-                <div class="shrink-0"><img src="./image/gl/YouTube.png" /></div>
+            <div class="overflow-hidden py-16">
+                <div class="marquee gap-5">
+
+                    <!-- Original Logos -->
+                    <div class="flex justify-between gap-16">
+                        <div class="shrink-0"><img src="./image/gl/Google.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Facebook.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Pinterest.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Twitch.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Webflow.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/YouTube.png" class="h-[30px] w-auto" /></div>
+                    </div>
+
+                    <!-- Duplicate Logos for seamless loop -->
+                    <div class="flex justify-between gap-16">
+                        <div class="shrink-0"><img src="./image/gl/Google.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Facebook.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Pinterest.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Twitch.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/Webflow.png" class="h-[30px] w-auto" /></div>
+                        <div class="shrink-0"><img src="./image/gl/YouTube.png" class="h-[30px] w-auto" /></div>
+                    </div>
+
+                </div>
             </div>
         </div>
 
         <div>
             <h3 class="font-light text-5xl text-[#D2EDFB] pt-16 ps-16">There words, our commitment</h3>
-            <div class="px-16 flex gap-5 justify-between">
-                <div class="w-[398px] py-16">
-                    <div>
-                        <img class="w-[398px] h-[416px]" src="./image/leaders/sean/profile.png" />
-                    </div>
-                    <div class="flex justify-between mt-3 items-center">
-                        <div>
-                            <h6 class="text-2xl text-[#D2EDFB] font-regular">Sean Magennis</h6>
-                            <p class="text-base text-[#4B7FC1] font-regular">Global President and CEO</p>
+            <div class="px-16 flex gap-5 justify-between pt-16">
+                <div>
+                    <div class="flip-card w-[398px] h-[416px] cursor-pointer">
+                        <div class="flip-card-inner" id="flipInner">
+
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <img src="./image/leaders/sean/profile.png" class="w-[398px] h-[416px] object-cover" />
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="flip-card-back bg-[#4B7FC1] flex items-center justify-center p-5">
+                                <p class="text-[#D2EDFB] text-2xl font-medium">
+                                    <span class="text-[#FFCE31] text-7xl">“</span><br />
+                                    You will have to rely on an honest, transparent, and timely communication with your
+                                    DevOps team and Qentelli was just that.
+                                </p>
+                            </div>
+
                         </div>
-                        <div>
-                            <img class="w-[78.95px] h[30px]" src="./image/leaders/sean/logo.png" />
+                    </div>
+
+                    <div class="w-[398px] mt-4">
+                        <div class="flex justify-between mt-3 items-center">
+                            <div>
+                                <h6 class="text-2xl text-[#D2EDFB] font-regular">Sean Magennis</h6>
+                                <p class="text-base text-[#4B7FC1] font-regular">Global President and CEO</p>
+                            </div>
+                            <div>
+                                <img class="w-[78.95px] h-[30px]" src="./image/leaders/sean/logo.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-[398px] py-16">
-                    <div>
-                        <img class="w-[398px] h-[416px]" src="./image/leaders/sean/profile.png" />
-                    </div>
-                    <div class="flex justify-between mt-3 items-center">
-                        <div>
-                            <h6 class="text-2xl text-[#D2EDFB] font-regular">Sean Magennis</h6>
-                            <p class="text-base text-[#4B7FC1] font-regular">Global President and CEO</p>
+                <div>
+                    <div class="flip-card w-[398px] h-[416px] cursor-pointer">
+                        <div class="flip-card-inner" id="flipInner">
+
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <img src="./image/leaders/sean/profile.png" class="w-[398px] h-[416px] object-cover" />
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="flip-card-back bg-[#4B7FC1] flex items-center justify-center text-center p-4">
+                                <p class="text-white text-lg font-medium">
+                                    You will have to rely on an honest, transparent, and timely communication with your
+                                    DevOps team and Qentelli was just that.
+                                </p>
+                            </div>
+
                         </div>
-                        <div>
-                            <img class="w-[78.95px] h[30px]" src="./image/leaders/sean/logo.png" />
+                    </div>
+
+                    <div class="w-[398px] mt-4">
+                        <div class="flex justify-between mt-3 items-center">
+                            <div>
+                                <h6 class="text-2xl text-[#D2EDFB] font-regular">Sean Magennis</h6>
+                                <p class="text-base text-[#4B7FC1] font-regular">Global President and CEO</p>
+                            </div>
+                            <div>
+                                <img class="w-[78.95px] h-[30px]" src="./image/leaders/sean/logo.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="w-[398px] py-16">
-                    <div>
-                        <img class="w-[398px] h-[416px]" src="./image/leaders/sean/profile.png" />
-                    </div>
-                    <div class="flex justify-between mt-3 items-center">
-                        <div>
-                            <h6 class="text-2xl text-[#D2EDFB] font-regular">Sean Magennis</h6>
-                            <p class="text-base text-[#4B7FC1] font-regular">Global President and CEO</p>
+                <div>
+                    <div class="flip-card w-[398px] h-[416px] cursor-pointer">
+                        <div class="flip-card-inner" id="flipInner">
+
+                            <!-- Front Face -->
+                            <div class="flip-card-front">
+                                <img src="./image/leaders/sean/profile.png" class="w-[398px] h-[416px] object-cover" />
+                            </div>
+
+                            <!-- Back Face -->
+                            <div class="flip-card-back bg-[#4B7FC1] flex items-center justify-center text-center p-4">
+                                <p class="text-white text-lg font-medium">
+                                    You will have to rely on an honest, transparent, and timely communication with your
+                                    DevOps team and Qentelli was just that.
+                                </p>
+                            </div>
+
                         </div>
-                        <div>
-                            <img class="w-[78.95px] h[30px]" src="./image/leaders/sean/logo.png" />
+                    </div>
+
+                    <div class="w-[398px] mt-4">
+                        <div class="flex justify-between mt-3 items-center">
+                            <div>
+                                <h6 class="text-2xl text-[#D2EDFB] font-regular">Sean Magennis</h6>
+                                <p class="text-base text-[#4B7FC1] font-regular">Global President and CEO</p>
+                            </div>
+                            <div>
+                                <img class="w-[78.95px] h-[30px]" src="./image/leaders/sean/logo.png" />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -398,6 +710,33 @@
         <div class="p-16 mx-auto">
             <img class="w-full h-full" src="image/Locations.png" />
         </div>
+
+        <div class="relative text-white w-[95vw] h-[401px] border mx-auto">
+            <!-- Heading -->
+            <h1 class="mb-6 pt-16">
+                <span class="block font-light text-4xl text-[#B0B0B0]">Connecting Continents,</span>
+                <span class="block font-light text-4xl text-[#B0B0B0]">Creating Impact</span>
+            </h1>
+
+            <!-- Location list -->
+            <div id="locations" class="space-y-3 mb-8 ms-16 text-xl">
+                <div data-location="india" class="location cursor-pointer">India</div>
+                <div data-location="dallas" class="location active cursor-pointer text-yellow-400 font-bold">Dallas, USA
+                </div>
+                <div data-location="mexico" class="location cursor-pointer">Mexico</div>
+                <div data-location="canada" class="location cursor-pointer">Canada</div>
+            </div>
+
+            <!-- SVG for marker only -->
+            <svg id="svg" class="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <circle id="marker" cx="0" cy="0" r="8" fill="#FACC15" visibility="hidden" />
+            </svg>
+
+            <!-- Map image -->
+            <img src="./image/MAP.png" class="absolute top-0 right-0 w-[814.33px] h-[401px] pointer-events-none" />
+        </div>
+
+
         <div class="py-16 h-[168px] bg-[#4B7FC1] flex justify-between px-16">
             <h6 class="text-4xl font-light text-[#fff]">Complexity isn't a Barrier. It's Our Starting Point.</h6>
             <button class="px-5 py-2 bg-[#D2EEF9] rounded-full text-lg text-[#1C1C1C]">Let's Transform</button>
@@ -516,12 +855,155 @@
                 </div>
             </div>
         </footer>
-        <div
-            class="h-[145px] text-center text-base text-[#D9D9D9] pt-16 font-regular flex-items-center justify-center"
+        <div class="h-[145px] text-center text-base text-[#D9D9D9] pt-16 font-regular flex-items-center justify-center"
             style="background: linear-gradient(to bottom, #111339 0%, #000119 88%);">
             <p>Copyright &copy; 2025-26 Qentelli Solutions | All Rights Reserved</p>
         </div>
     </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.getElementById("slides");
+        const indicator = document.getElementById("indicator");
+        const slideCount = 4;
+
+        function updateSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+            indicator.style.transform = `translateX(${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slideCount;
+            updateSlide(currentIndex);
+        }
+
+        // Initialize first slide
+        updateSlide(currentIndex);
+
+        setInterval(nextSlide, 4000);
+    </script>
+    <script>
+        function animateNumber(elementId, target, duration, suffix = "") {
+            const el = document.getElementById(elementId);
+            let current = 0;
+            const steps = Math.max(Math.ceil(target), 1);
+            const interval = duration / steps;
+
+            const counter = setInterval(() => {
+                current++;
+                el.textContent = current + suffix;
+                if (current >= target) {
+                    el.textContent = target + suffix;
+                    clearInterval(counter);
+                }
+            }, interval);
+        }
+
+        // Set up Intersection Observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Start counting once
+                    animateNumber("num1", 10, 1000);
+                    animateNumber("num2", 200, 1500, "+");
+                    animateNumber("num3", 110, 1200, "+");
+                    animateNumber("num4", 2500, 2000, "+");
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.3, // adjust based on how visible the section should be
+        });
+
+        observer.observe(document.getElementById("stats"));
+    </script>
+
+    <script>
+        const section = document.getElementById("horizontal-section");
+        const scrollContainer = document.getElementById("horizontal-scroll");
+
+        // Helper to check if section is visible in viewport
+        function isSectionVisible() {
+            const rect = section.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            );
+        }
+
+        // Helper to check if horizontal scroll is finished
+        function isScrollComplete() {
+            const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            return scrollContainer.scrollLeft >= maxScrollLeft;
+        }
+
+        window.addEventListener("wheel", (e) => {
+            if (!isSectionVisible()) return;
+
+            // If horizontal scroll is not yet complete
+            if (!isScrollComplete()) {
+                e.preventDefault();
+
+                scrollContainer.scrollBy({
+                    left: e.deltaY * 4, // adjust speed as desired
+                    behavior: "smooth",
+                });
+            }
+            // else → let page scroll happen naturally
+        }, { passive: false });
+    </script>
+
+    <script>
+        const flipCard = document.getElementById('flipInner');
+
+        // Flip on hover
+        flipCard.parentElement.addEventListener('mouseenter', () => {
+            flipCard.classList.add('flipped');
+        });
+        flipCard.parentElement.addEventListener('mouseleave', () => {
+            flipCard.classList.remove('flipped');
+        });
+
+        // Also allow click toggle
+        flipCard.parentElement.addEventListener('click', () => {
+            flipCard.classList.toggle('flipped');
+        });
+    </script>
+
+    <script>
+        const locations = {
+            india: { x: 1265, y: 218 },
+            dallas: { x: 910, y: 143 },
+            mexico: { x: 1130, y: 83 },
+            canada: { x: 620, y: 90 }
+        };
+
+        const marker = document.getElementById('marker');
+
+        document.querySelectorAll('.location').forEach(loc => {
+            loc.addEventListener('click', () => {
+                // Remove active class from all
+                document.querySelectorAll('.location').forEach(l => l.classList.remove('text-yellow-400', 'font-bold', 'active'));
+
+                // Add active to clicked one
+                loc.classList.add('text-yellow-400', 'font-bold', 'active');
+
+                const location = loc.getAttribute('data-location');
+                const target = locations[location];
+
+                // Move the marker
+                marker.setAttribute('cx', target.x);
+                marker.setAttribute('cy', target.y);
+                marker.setAttribute('visibility', 'visible');
+            });
+        });
+
+        // Trigger initial click to show Dallas marker on load
+        document.querySelector('.location.active').click();
+    </script>
+
+
 </body>
 
 </html>
