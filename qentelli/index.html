@@ -126,8 +126,8 @@
                 <li><a href="#" class="hover:text-yellow-400">Products</a></li>
                 <li><a href="#" class="hover:text-yellow-400">Case Studies</a></li>
                 <li><a href="#" class="hover:text-yellow-400">Insights</a></li>
-				<li><a href="#" class="hover:text-yellow-400">About</a></li>
-				<li><a href="#" class="hover:text-yellow-400">Careers</a></li>
+                <li><a href="#" class="hover:text-yellow-400">About</a></li>
+                <li><a href="#" class="hover:text-yellow-400">Careers</a></li>
             </ul>
 
             <!-- Right-side actions -->
@@ -301,7 +301,7 @@
 
                 <!-- Cards Grid -->
                 <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
-                <div class="flex justify-center gap-2">
+                <div class="flex justify-center gap-5">
                     <div>
                         <!-- Card 1 -->
                         <div class="relative rounded-lg overflow-hidden group w-[375.15px] h-[589.07px]">
@@ -353,7 +353,7 @@
                             </div>
 
                             <!-- Card 4 -->
-                            <div class="relative rounded-lg overflow-hidden group w-[375.93px] h-[281.47px]">
+                            <div class="relative rounded-lg overflow-hidden group w-[388px] h-[281.47px]">
                                 <img src="./image/qe.png" alt="Quality Engineering"
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition duration-300" />
                                 <div class="absolute inset-0 bg-black/50"></div>
@@ -541,9 +541,9 @@
 
             </div>
         </div>
-        <div class="mt-[-80px] ps-16 bg-[url('./image/vector.png')] bg-no-repeat bg-contain bg-top aspect-[16/9] pb-0">
+        <div class="mt-[-80px] autoScrollcontainer ps-16 bg-[url('./image/vector.png')] bg-no-repeat bg-contain bg-top aspect-[16/9] pb-0">
             <h3 class="font-light text-5xl text-[#D2EDFB] pt-[250px] pb-16">Case Studies</h3>
-            <div class="flex overflow-x-auto pb-16 gap-5">
+            <div class="flex overflow-x-auto pb-16 gap-5 overflowforauto">
                 <div class="shrink-0 w-[500px]">
                     <div>
                         <img class="w-[499px] h-[455px]" src="./image/casestd/img1.png" />
@@ -560,7 +560,8 @@
                     </div>
                     <div>
                         <h4 class="text-[#4B7FC1] text-lg font-regular my-4 mb-0">Banking</h4>
-                        <p class="text-[#B0B0B0] text-3xl">The power of User-Centric Design and Automation: A Banking Case Study</p>
+                        <p class="text-[#B0B0B0] text-3xl">The power of User-Centric Design and Automation: A Banking
+                            Case Study</p>
                     </div>
                 </div>
                 <div class="shrink-0 w-[500px]">
@@ -569,7 +570,8 @@
                     </div>
                     <div>
                         <h4 class="text-[#4B7FC1] text-lg font-regular my-4 mb-0">Test Automation</h4>
-                        <p class="text-[#B0B0B0] text-3xl">Streamlining Vendor Compliace for a Regional Quick Service Restaurant Group</p>
+                        <p class="text-[#B0B0B0] text-3xl">Streamlining Vendor Compliace for a Regional Quick Service
+                            Restaurant Group</p>
                     </div>
                 </div>
                 <div class="shrink-0 w-[520px] flex justify-center items-center mb-[100px]">
@@ -607,7 +609,7 @@
             </div>
         </div>
 
-        <div >
+        <div>
             <h3 class="font-light text-5xl text-[#D2EDFB] pt-16 ps-16">There words, our commitment</h3>
             <div class="px-16 flex gap-5 justify-between pt-16">
                 <div>
@@ -649,7 +651,8 @@
 
                             <!-- Front Face -->
                             <div class="flip-card-front">
-                                <img src="./image/leaders/michele/profile.png" class="w-[398px] h-[416px] object-cover" />
+                                <img src="./image/leaders/michele/profile.png"
+                                    class="w-[398px] h-[416px] object-cover" />
                             </div>
 
                             <!-- Back Face -->
@@ -1003,6 +1006,49 @@
 
         // Trigger initial click to show Dallas marker on load
         document.querySelector('.location.active').click();
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const section = document.querySelector(".autoScrollcontainer");
+            const scrollContainer = section.querySelector(".overflowforauto");
+
+            let isActive = false;
+
+            // Helper to check if section is roughly in viewport center
+            function isSectionInCenter() {
+                const rect = section.getBoundingClientRect();
+                const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                const sectionCenter = rect.top + rect.height / 2;
+                return sectionCenter > windowHeight * 0.2 && sectionCenter < windowHeight * 0.8;
+            }
+
+            // Listen to scroll events
+            window.addEventListener("scroll", () => {
+                if (isSectionInCenter()) {
+                    isActive = true;
+                } else {
+                    isActive = false;
+                }
+            });
+
+            // Listen to wheel events and translate vertical to horizontal scroll
+            window.addEventListener("wheel", (e) => {
+                if (!isActive) return;
+
+                const atEnd =
+                    Math.ceil(scrollContainer.scrollLeft + scrollContainer.clientWidth) >= scrollContainer.scrollWidth;
+                const atStart = scrollContainer.scrollLeft <= 0;
+
+                if ((e.deltaY > 0 && !atEnd) || (e.deltaY < 0 && !atStart)) {
+                    e.preventDefault();
+                    scrollContainer.scrollBy({
+                        left: e.deltaY * 2,
+                        behavior: "smooth",
+                    });
+                }
+            }, { passive: false });
+        });
     </script>
 
 
