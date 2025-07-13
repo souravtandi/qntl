@@ -541,7 +541,14 @@
 
             </div>
         </div>
-        <div class="mt-[-80px] autoScrollcontainer ps-16 bg-[url('./image/vector.png')] bg-no-repeat bg-contain bg-top aspect-[16/9] pb-0">
+        <div
+            class="mt-[-80px] autoScrollcontainer ps-16 bg-[url('./image/vector.png')] bg-no-repeat bg-contain bg-top aspect-[16/9] pb-0 
+            [scrollbar-color:#4B7FC1_#24294C]
+                    [scrollbar-width:thin]
+                    [&::-webkit-scrollbar]:h-1
+                    [&::-webkit-scrollbar]:bg-[#4B7FC1]
+                    [&::-webkit-scrollbar-thumb]:bg-[#4B7FC1]
+                    [&::-webkit-scrollbar-thumb]:rounded-full">
             <h3 class="font-light text-5xl text-[#D2EDFB] pt-[250px] pb-16">Case Studies</h3>
             <div class="flex overflow-x-auto pb-16 gap-5 overflowforauto">
                 <div class="shrink-0 w-[500px]">
@@ -580,33 +587,37 @@
             </div>
         </div>
         <div class="w-full">
-            <h3 class="font-light text-5xl text-[#D2EDFB] pt-16 text-center">Trusted by global Leaders around the world
-            </h3>
-            <div class="overflow-hidden py-16">
-                <div class="marquee gap-5">
+            <div class="relative" style="background-image: url('image/pathfinderblue.png'); background-repeat: no-repeat; background-position: left bottom; background-size: 200px 220px; ">
+                <h3 class="font-light text-5xl text-[#D2EDFB] pt-16 text-center">
+                    Trusted by global Leaders around the world
+                </h3>
+                <div class="overflow-hidden py-16">
+                    <div class="marquee gap-5">
 
-                    <!-- Original Logos -->
-                    <div class="flex justify-between gap-16">
-                        <div class="shrink-0"><img src="./image/gl/Google.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Facebook.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Pinterest.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Twitch.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Webflow.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/YouTube.png" class="h-[30px] w-auto" /></div>
+                        <!-- Original Logos -->
+                        <div class="flex justify-between gap-16">
+                            <div class="shrink-0"><img src="./image/gl/Google.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Facebook.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Pinterest.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Twitch.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Webflow.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/YouTube.png" class="h-[30px] w-auto" /></div>
+                        </div>
+
+                        <!-- Duplicate Logos for seamless loop -->
+                        <div class="flex justify-between gap-16">
+                            <div class="shrink-0"><img src="./image/gl/Google.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Facebook.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Pinterest.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Twitch.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/Webflow.png" class="h-[30px] w-auto" /></div>
+                            <div class="shrink-0"><img src="./image/gl/YouTube.png" class="h-[30px] w-auto" /></div>
+                        </div>
+
                     </div>
-
-                    <!-- Duplicate Logos for seamless loop -->
-                    <div class="flex justify-between gap-16">
-                        <div class="shrink-0"><img src="./image/gl/Google.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Facebook.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Pinterest.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Twitch.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/Webflow.png" class="h-[30px] w-auto" /></div>
-                        <div class="shrink-0"><img src="./image/gl/YouTube.png" class="h-[30px] w-auto" /></div>
-                    </div>
-
                 </div>
             </div>
+
         </div>
 
         <div>
